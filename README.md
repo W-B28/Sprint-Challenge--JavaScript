@@ -30,13 +30,45 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+  forEach() - executes a provided function once for each array element. the forEach() method doesn’t actually return anything (undefined). It simply calls a provided function on each element in your array. This callback is allowed to mutate the calling array.
+
+  map() - creates a new array with the results of calling a provided function on every element in the calling array. the map() method will also call a provided function on every element in the array. The difference is that map() utilizes return values and actually returns a new Array of the same size.
+
+
+
 2. What is the difference between a function and a method?
+
+  A function is a piece of code that is called by name. It can be passed data to operate on (i.e. the parameters) and
+  can optionally return data (the return value). All data that is passed to a function is explicitly passed.
+
+  A method is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:
+
+      a) A method is implicitly passed the object on which it was called.
+
+      b) A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class
+          - the class is the definition, the object is an instance of that data).
 
 3. What is closure?
 
+  Whenever you see the function keyword within another function, the inner function has access to variables in the outer function.
+  Simply accessing variables outside of your immediate lexical scope creates a closure.
+
+  A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+  In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every
+  time a function is created, at function creation time.
+
 4. Describe the four rules of the 'this' keyword.
+      'this' is determined at the time a function is invoked by inspecting where it’s called, its call site. It follows these rules, in order of precedence.
+      1.  Whenever a function is contained in the global scope, the value of 'this' inside of that function will be the window object.
+      2.  Whenever a function is called by a preceding dot, the object before that dot is this. (Implicit Binding)
+      3.  Whenever we use a constructor function, this refers to the specific instance of the object that is created and returned by the constructor function.
+      4.  Whenever we use JavaScript’s call, apply, and 'bind' method, 'this' is explicitly defined.
+
+
 
 5. Why do we need super() in an extended class?
+      super() replaces parent.call. It is used to call the constructor of the parent class and to access the parent's properties and methods.
+      super calls the methods from the class it extends from.
 
 ## Project Set up
 
@@ -65,11 +97,11 @@ Your finished project must include all of the following requirements:
 **Pro tip for this challenge: If something seems like it isn't working locally, copy and paste your code up to codepen and take another look at the console.**
 
 ## Task 1: Objects and Arrays
-Test your knowledge of objects and arrays. 
+Test your knowledge of objects and arrays.
 * [ ] Use the [objects-arrays.js](challenges/objects-arrays.js) link to get started.  Read the instructions carefully!
 
 ## Task 2: Functions
-This challenge takes a look at callbacks and closures as well as scope. 
+This challenge takes a look at callbacks and closures as well as scope.
 * [ ] Use the [functions.js](challenges/functions.js) link to get started. Read the instructions carefully!
 
 ## Task 3: Prototypes
